@@ -1,0 +1,30 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mariadb
+    container_name: db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    ports:
+      - 33306:3306
+    networks:
+      - plumemo-net
+
+  adminer:
+    image: adminer
+    container_name: db_adminer
+    restart: always
+    depends_on: 
+      - db
+    ports:
+      - 38080:8080
+    networks:
+      - plumemo-net
+
+networks:
+  plumemo-net:
+    driver: bridge  
