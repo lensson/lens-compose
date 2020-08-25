@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  gate:
+    image: nginx
+    command: [nginx-debug, '-g', 'daemon off;']
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+    ports:
+      - 80:80
+      networks:
+        - mala-net
+
+networks:
+  malanet:
+    driver: bridge  

@@ -1,0 +1,37 @@
+# all .iml files
+*.iml
+*/bin
+*.classpath
+.coverage
+*.settings
+*.project
+*target
+.ropeproject
+__pycache__
+venv
+.vscode
+
+.idea
+
+# /av/anv/
+/av/anv/target
+/av/anv/.project
+/av/anv/.classpath
+/av/anv/.settings
+
+
+# /av/anv/src/main/resources/bin/
+/av/anv/src/main/resources/bin/stopServer.sh
+
+/ac/cli-adapter/venv/
+/ac/cli-adapter/data/
+/ac/cli-adapter/samples/
+/ac/cli-adapter/yang/
+/ac/cli-adapter/tests/output/
+/ac/cli-adapter/environment.json
+/ac/cli-adapter/history
+/ac/cli-adapter/htmlcov
+/ac/cli-adapter/tests/yang/**/*.json
+/ac/cli-adapter/tests/yang/**/*.xsl
+# all flattened pom files
+**/.flattened-pom.xml

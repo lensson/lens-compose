@@ -1,0 +1,18 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  nginx:
+    image: nginx
+    command: [nginx-debug, '-g', 'daemon off;']
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - /home/zhenac/projects/plumemo-admin/dist:/usr/share/nginx/html/plumemo-admin
+      - /home/zhenac/projects/theme-default/dist:/usr/share/nginx/html/plumemo-default
+      - /home/zhenac/projects/theme-default2/dist:/usr/share/nginx/html/plumemo-default2
+    ports:
+      - 38001:8001
+      - 38002:8002
+      - 38100:8100
+    neto
