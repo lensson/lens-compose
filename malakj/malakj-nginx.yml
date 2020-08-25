@@ -5,11 +5,12 @@ services:
     image: nginx
     command: [nginx-debug, '-g', 'daemon off;']
     volumes:
-      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/conf/conf.d:/etc/nginx/conf.d
+      - ./nginx/logs:/var/log/nginx  
     ports:
       - 80:80
-      networks:
-        - mala-net
+    networks:
+      - malanet
 
 networks:
   malanet:
