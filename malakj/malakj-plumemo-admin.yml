@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   plumemo-admin:
-    image: lensson/plumemo-admin:1.2.0
+    image: lensson/plumemo-admin:latest
     command: [nginx-debug, '-g', 'daemon off;']
     #volumes:
       #- ./nginx/conf/conf.d:/etc/nginx/conf.d
