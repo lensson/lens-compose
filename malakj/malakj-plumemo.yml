@@ -1,13 +1,13 @@
 version: '3.1'
 
 services:
-  gate:
+  plumemo:
     image: lensson/plumemo:latest
     ports:
       - 9000:8086
     networks:
-      - malanet
+      - malakj_malanet
 
 networks:
-  malanet:
+  malakj_malanet:
     external: true 
