@@ -5,6 +5,8 @@
 .coverage
 *.settings
 *.project
+
+*.log
 *target
 .ropeproject
 __pycache__
