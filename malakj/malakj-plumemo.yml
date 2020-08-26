@@ -7,8 +7,6 @@ services:
     volumes:
       - ./nginx/conf/conf.d:/etc/nginx/conf.d
       #- ./nginx/logs:/var/log/nginx
-    environment:
-      DOMAIN_NAME: lensson.ml  
     ports:
       - 80:80
     networks:
