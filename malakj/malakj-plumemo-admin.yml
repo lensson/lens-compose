@@ -1,11 +1,11 @@
 version: '3.1'
 
 services:
-  gate:
-    image: lensson/plumemo
+  plumemo-admin:
+    image: lensson/plumemo-admin
     command: [nginx-debug, '-g', 'daemon off;']
-    volumes:
-      - ./nginx/conf/conf.d:/etc/nginx/conf.d
+    #volumes:
+      #- ./nginx/conf/conf.d:/etc/nginx/conf.d
       #- ./nginx/logs:/var/log/nginx
     ports:
       - 80:80

@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   gate:
-    image: nginx
+    image: lensson/plumemo/1.2.0
     command: [nginx-debug, '-g', 'daemon off;']
     volumes:
       - ./nginx/conf/conf.d:/etc/nginx/conf.d
