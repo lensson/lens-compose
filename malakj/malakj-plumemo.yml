@@ -2,16 +2,12 @@ version: '3.1'
 
 services:
   gate:
-    image: lensson/plumemo/1.2.0
-    command: [nginx-debug, '-g', 'daemon off;']
-    volumes:
-      - ./nginx/conf/conf.d:/etc/nginx/conf.d
-      #- ./nginx/logs:/var/log/nginx
+    image: lensson/plumemo:latest
     ports:
-      - 80:80
+      - 9000:8086
     networks:
       - malanet
 
 networks:
   malanet:
-    driver: bridge  
+    external: true 

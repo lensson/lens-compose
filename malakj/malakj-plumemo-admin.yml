@@ -14,4 +14,4 @@ services:
 
 networks:
   malanet:
-    driver: bridge  
+    external: true 
