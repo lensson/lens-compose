@@ -2,13 +2,13 @@ version: '3.1'
 
 services:
   plumemo-admin:
-    image: lensson/plumemo-admin
+    image: lensson/plumemo-admin:1.2.0
     command: [nginx-debug, '-g', 'daemon off;']
     #volumes:
       #- ./nginx/conf/conf.d:/etc/nginx/conf.d
       #- ./nginx/logs:/var/log/nginx
     ports:
-      - 80:80
+      - 8100:80
     networks:
       - malanet
 
