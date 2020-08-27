@@ -6,14 +6,15 @@ services:
     command: [nginx-debug, '-g', 'daemon off;']
     volumes:
       - ./nginx/conf/conf.d:/etc/nginx/conf.d
-      #- ./nginx/logs:/var/log/nginx
+      - ./nginx/logs:/var/log/nginx
+      - ./nginx/cert:/etc/nginx/cert
     environment:
       DOMAIN_NAME: lensson.ml  
     ports:
       - 80:80
     networks:
-      - malanet
+      - malakj_malanet
 
 networks:
-  malanet:
-    driver: bridge  
+  malakj_malanet:
+    external: true
