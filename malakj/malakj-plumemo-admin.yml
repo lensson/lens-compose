@@ -10,8 +10,8 @@ services:
     ports:
       - 8100:80
     networks:
-      - malalkj_malanet
+      - malakj_malanet
 
 networks:
-  malalkj_malanet:
+  malakj_malanet:
     external: true 
