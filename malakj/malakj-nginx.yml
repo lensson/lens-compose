@@ -9,7 +9,7 @@ services:
       - ./nginx/logs:/var/log/nginx
       - ./nginx/cert:/etc/nginx/cert
     environment:
-      DOMAIN_NAME: lensson.ml  
+      DOMAIN_NAME: malakj.com
     ports:
       - 80:80
     networks:
