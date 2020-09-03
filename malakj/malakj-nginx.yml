@@ -12,6 +12,7 @@ services:
       DOMAIN_NAME: malakj.com
     ports:
       - 80:80
+      - 443:443
     networks:
       - malakj_malanet
 
