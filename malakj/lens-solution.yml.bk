@@ -9,8 +9,6 @@ services:
       - 8849:8849
     networks:
       - malakj_malanet
-    volumes:
-      - ~/containers/lens-gateway/nacos/naming/public:/root/nacos/naming/public
     environment:
       nacos: nacos
   lens-auth:
@@ -23,8 +21,8 @@ services:
       - malakj_malanet
     environment:
       nacos: nacos
-      redis: redis
-      lens-auth: lens-auth
+
+
 networks:
   malakj_malanet:
     external: true 
