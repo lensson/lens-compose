@@ -12,7 +12,7 @@ services:
     ports:
       - 33306:3306
     networks:
-      - lensnetwork
+      - backnet
   lens-mariadb-adminer:
     image: adminer
     container_name: lens-mariadb-adminer
@@ -22,7 +22,7 @@ services:
     ports:
       - 38080:8080
     networks:
-      - lensnetwork
+      - backnet
   lens-redis:
     image: redis
     container_name: lens-redis
@@ -33,7 +33,7 @@ services:
       - ~/containers/lens-redis/data:/data
       - ~/containers/lens-redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
     networks:
-      - lensnetwork
+      - backnet
 networks:
-  lensnetwork:
+  backnet:
     driver: bridge
