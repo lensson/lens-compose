@@ -35,6 +35,5 @@ services:
     networks:
       - lensnetwork
 networks:
-  lens-net:
+  lensnetwork:
     driver: bridge
-    name: lensnetwork
