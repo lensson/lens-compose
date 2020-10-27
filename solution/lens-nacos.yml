@@ -1,0 +1,32 @@
+version: "3.1"
+services:
+  lens-nacos:
+    image: nacos/nacos-server:1.3.1
+    container_name: lens-nacos
+    env_file:
+      - nacos/nacos-standlone-mysql.env
+    volumes:
+      - ~/containers/lens-nacos/logs/nacos/standalone-logs/:/home/nacos/logs
+      - ./nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties
+    depends_on:
+      - lens-nacos-mysql
+    ports:
+      - "8848:8848"
+      - "9555:9555"
+    networks:
+      - solution_backnet
+    restart: always
+  lens-nacos-mysql:
+    container_name: lens-nacos-mysql
+    image: nacos/nacos-mysql:8.0.16
+    env_file:
+      - ./nacos/mysql.env
+    volumes:
+      - ~/containers/lens-nacos-mysql/data/nacos/mysql:/var/lib/mysql
+    ports:
+      - "43306:3306"
+    networks:
+      - solution_backnet
+networks:
+  solution_backnet:
+    external: true
