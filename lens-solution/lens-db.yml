@@ -18,7 +18,7 @@ services:
     container_name: lens-mariadb-adminer
     restart: always
     depends_on:
-      - db
+      - lens-mariadb
     ports:
       - 38080:8080
     networks:
