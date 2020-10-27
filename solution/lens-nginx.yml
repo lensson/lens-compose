@@ -15,8 +15,8 @@ services:
       - 80:80
       - 443:443
     networks:
-      - backnet
+      - solution_backnet
 
 networks:
-  backnet:
+  solution_backnet:
     external: true
