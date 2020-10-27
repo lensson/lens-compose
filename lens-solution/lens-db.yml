@@ -1,0 +1,40 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+  lens-mariadb:
+    image: mariadb
+    container_name: lens-mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    volumes:
+      - ~/containers/lens-mariadb/data:/var/lib/mysql
+    ports:
+      - 33306:3306
+    networks:
+      - lensnetwork
+  lens-mariadb-adminer:
+    image: adminer
+    container_name: lens-mariadb-adminer
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 38080:8080
+    networks:
+      - lensnetwork
+  lens-redis:
+    image: redis
+    container_name: lens-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - ~/containers/lens-redis/data:/data
+      - ~/containers/lens-redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
+    networks:
+      - lensnetwork
+networks:
+  lens-net:
+    driver: bridge
+    name: lensnetwork
