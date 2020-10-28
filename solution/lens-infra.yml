@@ -12,7 +12,7 @@ services:
     volumes:
       - ~/containers/lens-gateway/nacos/naming/public:/root/nacos/naming/public
     environment:
-      nacos: nacos
+      nacos: lens-nacos
   lens-auth:
     container_name: lens-auth
     image: lensson/lens-auth:latest
@@ -22,8 +22,8 @@ services:
     networks:
       - solution_backnet
     environment:
-      nacos: nacos
-      redis: redis
+      nacos: lens-nacos
+      redis: lens-redis
       lens-auth: lens-auth
 networks:
   solution_backnet:
