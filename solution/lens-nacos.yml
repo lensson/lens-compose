@@ -15,17 +15,6 @@ services:
     networks:
       - solution_backnet
     restart: always
-  lens-nacos-mysql:
-    container_name: lens-nacos-mysql
-    image: nacos/nacos-mysql:8.0.16
-    env_file:
-      - ./lens-nacos-mysql/mysql.env
-    volumes:
-      - ~/containers/lens-nacos-mysql/data:/var/lib/mysql
-    ports:
-      - "43306:3306"
-    networks:
-      - solution_backnet
 networks:
   solution_backnet:
     external: true
