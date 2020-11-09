@@ -8,8 +8,8 @@ services:
     ports:
       - 8301:80
     networks:
-      - malakj_malanet
+      - solution_backnet
     restart: unless-stopped
 networks:
-  malakj_malanet:
+  solution_backnet:
     external: true 
