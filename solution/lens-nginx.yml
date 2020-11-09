@@ -4,7 +4,7 @@ services:
   lens-nginx:
     image: lensson/ohttps_nginx
     container_name: lens-nginx
-    restart: always
+    restart: unless-stopped
     command: [nginx-debug, '-g', 'daemon off;']
     volumes:
       - ./lens-nginx/conf/conf.d:/etc/nginx/conf.d

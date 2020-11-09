@@ -9,7 +9,7 @@ services:
       - 8100:80
     networks:
       - solution_backnet
-
+    restart: unless-stopped
 networks:
   solution_backnet:
     external: true 

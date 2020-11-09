@@ -4,7 +4,7 @@ services:
   lens-mariadb:
     image: mariadb
     container_name: lens-mariadb
-    restart: always
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: mysql
     volumes:
@@ -16,7 +16,7 @@ services:
   lens-mariadb-adminer:
     image: adminer
     container_name: lens-mariadb-adminer
-    restart: always
+    restart: unless-stopped
     depends_on:
       - lens-mariadb
     ports:
@@ -26,7 +26,7 @@ services:
   lens-redis:
     image: redis
     container_name: lens-redis
-    restart: always
+    restart: unless-stopped
     ports:
       - "6379:6379"
     volumes:

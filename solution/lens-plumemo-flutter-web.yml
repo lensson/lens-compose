@@ -9,6 +9,7 @@ services:
       - 8301:80
     networks:
       - malakj_malanet
+    restart: unless-stopped
 networks:
   malakj_malanet:
     external: true 
