@@ -1,0 +1,13 @@
+version: "3.1"
+services:
+  lens-solr:
+    image: solr
+    container_name: lens-solr
+    ports:
+      - 8983:8983
+    networks:
+      - solution_backnet
+    restart: unless-stopped
+networks:
+  solution_backnet:
+    external: true
