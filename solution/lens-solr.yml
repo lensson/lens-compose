@@ -3,14 +3,6 @@ services:
   lens-solr:
     image: solr:7.1.0
     container_name: lens-solr
-    environment:
-      - STORAGE_TYPE=mysql
-      # Point the zipkin at the storage backend
-      - MYSQL_DB=zipkin
-      - MYSQL_USER=lens
-      - MYSQL_PASS=lens
-      - MYSQL_HOST=172.17.0.1
-      - MYSQL_TCP_PORT=33306
     ports:
       - 8983:8983
     networks:
