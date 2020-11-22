@@ -5,7 +5,6 @@ services:
     container_name: lens-nacos
     env_file:
       - ./lens-nacos/lens-nacos.env
-      - ./env/lens-mac.properties
     volumes:
       - ./lens-nacos/nacos-logback.xml:/home/nacos/conf/nacos-logback.xml
       - ./lens-nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties

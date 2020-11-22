@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  lens-blog-picture:
+    container_name: lens-blog-picture
+    image: lensson/lens-blog-picture:latest
+    restart: unless-stopped
+    env_file:
+      - ./env/lens-mac.properties
+    environment:
+      lens-nacos: 192.168.50.72
+    ports:
+      - 9012:9012
+    networks:
+      - solution_backnet
+networks:
+  solution_backnet:
+    external: true 
