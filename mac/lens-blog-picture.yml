@@ -13,4 +13,4 @@ services:
       - solution_backnet
 networks:
   solution_backnet:
-    external: true 
+    external: true
