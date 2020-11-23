@@ -1,0 +1,18 @@
+version: "3.1"
+services:
+  lens-rabbitmq:
+    image: rabbitmq:3-management
+    container_name: lens-rabbitmq
+    volumes:
+      - ./lens-rabbitmq/etc/:/etc/rabbitmq/
+      - ~/containers/lens-rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/containers/lens-rabbitmq/logs/:/var/log/rabbitmq/
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - solution_backnet
+    restart: unless-stopped
+networks:
+  solution_backnet:
+    external: true

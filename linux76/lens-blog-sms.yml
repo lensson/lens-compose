@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  lens-blog-sms:
+    container_name: lens-blog-sms
+    image: lensson/lens-blog-sms:latest
+    restart: unless-stopped
+    env_file:
+      - ./env/lens-linux76.env
+    volumes:
+      - ~/containers/logs/lens-blog-sms:/root/containers/logs/lens-blog-sms
+    ports:
+      - 9011:9011
+    networks:
+      - solution_backnet
+networks:
+  solution_backnet:
+    external: true 
