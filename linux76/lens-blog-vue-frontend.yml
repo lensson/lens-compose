@@ -1,15 +1,15 @@
 version: '3.5'
 
 services:
-  lens-blog-admin-vue-frontend:
-    container_name: lens-blog-admin-vue-frontend
-    image: lensson/lens-blog-admin-vue-frontend:latest
+  lens-blog-vue-frontend:
+    container_name: lens-blog-vue-frontend
+    image: lensson/lens-blog-vue-frontend:latest
     command: [nginx-debug, '-g', 'daemon off;']
     restart: unless-stopped
     env_file:
       - ./env/lens-linux76.env
     ports:
-      - 8002:80
+      - 8001:80
     networks:
       - solution_backnet
 networks:
