@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  lens-plumemo-flutter-web:
+    container_name: lens-plumemo-flutter-web
+    image: lensson/flutter_blog
+    command: [nginx-debug, '-g', 'daemon off;']
+    ports:
+      - 8301:80
+    networks:
+      - solution_backnet
+    restart: unless-stopped
+networks:
+  solution_backnet:
+    external: true 

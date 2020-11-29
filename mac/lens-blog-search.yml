@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  lens-blog-search:
+    container_name: lens-blog-search
+    image: lensson/lens-blog-search:latest
+    restart: unless-stopped
+    env_file:
+      - env/lens-mac.env
+    volumes:
+      - ~/containers/logs/lens-blog-search:/root/containers/logs/lens-blog-search
+    ports:
+      - 9013:9013
+    networks:
+      - solution_backnet
+networks:
+  solution_backnet:
+    external: true

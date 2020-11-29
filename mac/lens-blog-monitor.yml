@@ -6,7 +6,9 @@ services:
     image: lensson/lens-blog-monitor:latest
     restart: unless-stopped
     env_file:
-      - ./env/lens-mac.properties
+      - env/lens-mac.env
+    volumes:
+      - ~/containers/logs/lens-blog-monitor:/root/containers/logs/lens-blog-monitor
     ports:
       - 9020:9020
     networks:

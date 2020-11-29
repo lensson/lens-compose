@@ -1,5 +1,5 @@
 # Use root/example as user/password credentials
-version: '3.1'
+version: '3.5'
 services:
   lens-mariadb:
     image: mariadb
@@ -12,7 +12,7 @@ services:
     ports:
       - 33306:3306
     networks:
-      - backnet
+      - solution_backnet
   lens-mariadb-adminer:
     image: adminer
     container_name: lens-mariadb-adminer
@@ -22,7 +22,7 @@ services:
     ports:
       - 38080:8080
     networks:
-      - backnet
+      - solution_backnet
   lens-redis:
     image: redis
     container_name: lens-redis
@@ -33,8 +33,8 @@ services:
       - ~/containers/lens-redis/data:/data
       - ~/containers/lens-redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
     networks:
-      - backnet
+      - solution_backnet
 networks:
-  backnet:
+  solution_backnet:
     driver: bridge
     name: solution_backnet

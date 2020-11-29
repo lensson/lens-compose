@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  lens-blog-spider:
+    container_name: lens-blog-spider
+    image: lensson/lens-blog-spider:latest
+    restart: unless-stopped
+    env_file:
+      - env/lens-mac.env
+    volumes:
+      - ~/containers/logs/lens-blog-spider:/root/containers/logs/lens-blog-spider
+    ports:
+      - 9014:9014
+    networks:
+      - solution_backnet
+networks:
+  solution_backnet:
+    external: true 

@@ -6,7 +6,9 @@ services:
     image: lensson/lens-blog-sms:latest
     restart: unless-stopped
     env_file:
-      - ./env/lens-mac.properties
+      - env/lens-mac.env
+    volumes:
+      - ~/containers/logs/lens-blog-sms:/root/containers/logs/lens-blog-sms
     ports:
       - 9011:9011
     networks:
