@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.5'
 
 services:
   lens-blog-admin-backend:
@@ -6,13 +6,14 @@ services:
     image: lensson/lens-blog-admin-backend:latest
     restart: unless-stopped
     env_file:
-      - ./env/lens-mac.properties
-    environment:
-      lens-nacos: 192.168.50.72
+      - env/solution.env
+    volumes:
+      - ~/containers/logs/lens-blog-admin-backend:/root/containers/logs/lens-blog-admin-backend
     ports:
       - 9002:9002
     networks:
-      - solution_backnet
+      solution_backnet:
+        ipv4_address:  172.28.0.102
 networks:
   solution_backnet:
-    external: true 
+    external: true

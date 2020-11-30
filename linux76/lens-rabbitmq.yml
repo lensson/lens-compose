@@ -11,7 +11,8 @@ services:
       - 5672:5672
       - 15672:15672
     networks:
-      - solution_backnet
+      solution_backnet:
+        ipv4_address:  172.28.0.23
     restart: unless-stopped
 networks:
   solution_backnet:

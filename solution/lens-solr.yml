@@ -6,8 +6,11 @@ services:
     ports:
       - 8983:8983
     networks:
-      - solution_backnet
+      solution_backnet:
+        ipv4_address:  172.28.0.25
     restart: unless-stopped
+    #volumes:
+    #  - ~/containers/logs/lens-solr:/opt/solr/server/logs
 networks:
   solution_backnet:
     external: true

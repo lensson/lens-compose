@@ -13,7 +13,8 @@ services:
       - "8848:8848"
       - "9555:9555"
     networks:
-      - solution_backnet
+      solution_backnet:
+        ipv4_address:  172.28.0.21
     restart: unless-stopped
 networks:
   solution_backnet:

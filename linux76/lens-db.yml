@@ -12,7 +12,8 @@ services:
     ports:
       - 33306:3306
     networks:
-      - solution_backnet
+      solution_backnet:
+        ipv4_address: 172.28.0.11
   lens-mariadb-adminer:
     image: adminer
     container_name: lens-mariadb-adminer
@@ -22,7 +23,8 @@ services:
     ports:
       - 38080:8080
     networks:
-      - solution_backnet
+      solution_backnet:
+        ipv4_address:  172.28.0.12
   lens-redis:
     image: redis
     container_name: lens-redis
@@ -33,8 +35,12 @@ services:
       - ~/containers/lens-redis/data:/data
       - ~/containers/lens-redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
     networks:
-      - solution_backnet
+      solution_backnet:
+        ipv4_address:  172.28.0.13
 networks:
   solution_backnet:
     driver: bridge
     name: solution_backnet
+    ipam:
+      config:
+        - subnet: 172.28.0.0/24

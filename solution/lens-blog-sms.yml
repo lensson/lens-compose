@@ -6,11 +6,14 @@ services:
     image: lensson/lens-blog-sms:latest
     restart: unless-stopped
     env_file:
-      - ./env/lens-mac.properties
+      - env/solution.env
+    volumes:
+      - ~/containers/logs/lens-blog-sms:/root/containers/logs/lens-blog-sms
     ports:
       - 9011:9011
     networks:
-      - solution_backnet
+      solution_backnet:
+        ipv4_address:  172.28.0.111
 networks:
   solution_backnet:
     external: true 

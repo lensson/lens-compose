@@ -6,13 +6,14 @@ services:
     image: lensson/lens-blog-picture:latest
     restart: unless-stopped
     env_file:
-      - ./env/lens-linux76.env
+      - env/solution.env
     volumes:
       - ~/containers/logs/lens-blog-picture:/root/containers/logs/lens-blog-picture
     ports:
       - 9012:9012
     networks:
-      - solution_backnet
+      solution_backnet:
+        ipv4_address:  172.28.0.112
 networks:
   solution_backnet:
     external: true
