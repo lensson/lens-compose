@@ -8,7 +8,7 @@ services:
     volumes:
       - ./lens-nacos/nacos-logback.xml:/home/nacos/conf/nacos-logback.xml
       - ./lens-nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties
-      - ~/containers/lens-nacos/logs/:/home/nacos/logs
+      - ~/containers/logs/lens-nacos:/home/nacos/logs
     ports:
       - "8848:8848"
       - "9555:9555"
