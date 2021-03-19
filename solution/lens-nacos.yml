@@ -1,8 +1,10 @@
-version: "3.1"
+# Use root/example as user/password credentials
+version: '3.5'
 services:
   lens-nacos:
     image: nacos/nacos-server:1.3.1
     container_name: lens-nacos
+    restart: unless-stopped
     env_file:
       - ./lens-nacos/lens-nacos.env
     volumes:
