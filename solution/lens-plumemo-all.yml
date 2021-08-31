@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  lens-plumemo:
+    image: lensson/plumemo:latest
+    container_name: lens-plumemo
+    restart: unless-stopped
+    ports:
+      - 9201:9000
+    networks:
+      solution_backnet:
+        ipv4_address:  172.28.0.201
+    environment:
+      MYSQL_USERNAME: lens
+      MYSQL_PASSWORD: lens
+    volumes:
+      - ~/containers/lens-plumemo/files:/files
+  lens-plumemo-admin-web:
+    image: lensson/plumemo-admin:latest
+    container_name: lens-plumemo-admin-web
+    command: [nginx-debug, '-g', 'daemon off;']
+    ports:
+      - 8202:80
+    networks:
+      solution_backnet:
+        ipv4_address:  172.28.0.202
+    restart: unless-stopped
+networks:
+  solution_backnet:
+    external: true 
