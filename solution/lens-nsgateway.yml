@@ -1,7 +1,7 @@
 version: '3.1'
 
 services:
-  lens-gateway:
+  lens-nsgateway:
     container_name: lens-nsgateway
     image: lensson/lens-nsgateway:latest
     restart: unless-stopped

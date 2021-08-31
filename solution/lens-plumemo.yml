@@ -6,7 +6,7 @@ services:
     container_name: lens-plumemo
     restart: unless-stopped
     ports:
-      - 9000:9000
+      - 9201:9000
     networks:
       solution_backnet:
         ipv4_address:  172.28.0.201
