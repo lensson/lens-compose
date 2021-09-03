@@ -15,7 +15,7 @@ services:
       MYSQL_PASSWORD: lens
     volumes:
       - ~/containers/lens-plumemo/files:/files
-
+      - ~/containers/lens-plumemo/logs:/logs
 
 networks:
   solution_backnet:
