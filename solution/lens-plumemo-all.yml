@@ -26,6 +26,16 @@ services:
       solution_backnet:
         ipv4_address:  172.28.0.202
     restart: unless-stopped
+  lens-plumemo-flutter-web:
+    container_name: lens-plumemo-flutter-web
+    image: lensson/flutter_blog
+    command: [nginx-debug, '-g', 'daemon off;']
+    ports:
+      - 8203:80
+    networks:
+      solution_backnet:
+        ipv4_address:  172.28.0.203
+    restart: unless-stopped
 networks:
   solution_backnet:
-    external: true 
+    external: true
