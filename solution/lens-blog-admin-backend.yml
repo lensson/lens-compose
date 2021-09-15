@@ -8,7 +8,7 @@ services:
     env_file:
       - env/solution.env
     volumes:
-      - ~/containers/logs/lens-blog-admin-backend:/root/containers/logs/lens-blog-admin-backend
+      - ~/containers/lens-blog-admin-backend/logs:/root/containers/logs/lens-blog-admin-backend
     ports:
       - 9002:9002
     networks:

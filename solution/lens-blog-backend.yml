@@ -8,7 +8,7 @@ services:
     env_file:
       - env/solution.env
     volumes:
-      - ~/containers/logs/lens-blog-backend:/root/containers/logs/lens-blog-backend
+      - ~/containers/lens-blog-backend/logs:/root/containers/logs/lens-blog-backend
     ports:
       - 9001:9001
     networks:
