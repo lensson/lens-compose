@@ -1,15 +1,15 @@
 version: '3.1'
 
 services:
-  lens-plumemo-admin-web:
-    image: lensson/plumemo-admin:latest
-    container_name: lens-plumemo-admin-web
+  lens-plumemo-flutter-client:
+    container_name: lens-plumemo-flutter-client
+    image: lensson/lens-plumemo-flutter-client:latest
     command: [nginx-debug, '-g', 'daemon off;']
     ports:
-      - 8202:80
+      - 8203:80
     networks:
       solution_backnet:
-        ipv4_address:  172.28.0.202
+        ipv4_address:  172.28.0.203
     restart: unless-stopped
 networks:
   solution_backnet:

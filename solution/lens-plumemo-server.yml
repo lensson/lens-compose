@@ -1,9 +1,9 @@
 version: '3.1'
 
 services:
-  lens-plumemo:
-    image: lensson/plumemo:latest
-    container_name: lens-plumemo
+  lens-plumemo-server:
+    image: lensson/lens-plumemo-server:latest
+    container_name: lens-plumemo-server
     restart: unless-stopped
     ports:
       - 9201:9000
@@ -14,8 +14,8 @@ services:
       MYSQL_USERNAME: lens
       MYSQL_PASSWORD: lens
     volumes:
-      - ~/containers/lens-plumemo/files:/files
-      - ~/containers/lens-plumemo/logs:/logs
+      - ~/containers/lens-plumemo-server/files:/files
+      - ~/containers/lens-plumemo-server/logs:/logs
 
 networks:
   solution_backnet:
