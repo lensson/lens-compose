@@ -44,7 +44,7 @@ lens-blog-monitor:              172.28.0.120    9020:9020
 |                              |              | 443:443           |                        |        |
 | lens-nacos                   | 172.28.0.21  | 8848:8848         | nacos.malakj.com/nacos |        |
 |                              |              | 9555:9555         |                        |        |
-| lens-zipkin                  | 172.28.0.22  | 9411:9411         |                        |        |
+| lens-zipkin                  | 172.28.0.22  | 9411:9411         | malakj.com/zipkin      |        |
 | lens-rabbitmq                | 172.28.0.23  | 5672:5672         |                        |        |
 |                              |              | 15672:15672       |                        |        |
 | lens-sentinel                | 172.28.0.24  | 8718:8080         |                        |        |
