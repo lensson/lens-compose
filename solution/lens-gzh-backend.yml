@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  lens-gzh-backend:
+    container_name: lens-gzh-backend
+    image: lensson/lens-gzh-backend:latest
+    restart: unless-stopped
+    ports:
+      - 9031:9031
+    networks:
+      solution_backnet:
+        ipv4_address:  172.28.0.131
+    env_file:
+      - env/solution.env
+networks:
+  solution_backnet:
+    external: true 
