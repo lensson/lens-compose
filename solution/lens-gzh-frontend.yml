@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  lens-gzh-frontend:
+    container_name: lens-gzh-frontend
+    image: lensson/lens-gzh-frontend:latest
+    command: [nginx-debug, '-g', 'daemon off;']
+    restart: unless-stopped
+    env_file:
+      - env/solution.env
+    ports:
+      - 8071:80
+    networks:
+      solution_backnet:
+        ipv4_address:  172.28.0.171
+networks:
+  solution_backnet:
+    external: true

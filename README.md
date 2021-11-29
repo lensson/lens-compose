@@ -66,7 +66,7 @@ lens-blog-monitor:              172.28.0.120    9020:9020
 | lens-blog-monitor            | 172.28.0.120 | 9020:9020         |                        |        |
 | **---- WX ----**             | ——————       | ——————            | ——————                 | —————— |
 | lens-gzh-server              | 172.28.0.131 | 9031:9031         |                        |        |
-| lens-gzh-frontend            | 172.28.0.171 | 8071:8071         | admin.gzh.malakj.com   |        |
+| lens-gzh-frontend            | 172.28.0.171 | 8071:80           | admin.gzh.malakj.com   |        |
 |                              |              |                   |                        |        |
 |                              |              |                   |                        |        |
 |                              |              |                   |                        |        |
