@@ -43,9 +43,9 @@ jobs:
             echo "===== Try to pull image lensson/lens-nsgateway:latest ====="
             out=$(docker pull lensson/lens-nsgateway:latest)
             if [[ $out != *"up to date"* ]]; then
-              print("lensson/lens-nsgateway is updated to newest!")
+              echo "lensson/lens-nsgateway is updated to newest!"
             else
-              print("lensson/lens-nsgateway is already up to date...")
+              echo "lensson/lens-nsgateway is already up to date..."
             fi
             echo "===== Try to pull image lensson/lens-auth:latest ====="
             docker pull lensson/lens-auth:latest
