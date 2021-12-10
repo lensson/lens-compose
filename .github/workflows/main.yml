@@ -35,8 +35,8 @@ jobs:
         with:
           host: ${{ secrets.UCLOUD_HOST }}
           username: ${{ secrets.UCLOUD_USERNAME }}
-          #password: ${{ secrets.UCLOUD_PASSWORD }}
-          key : ${{ secrets.UCLOUD_PRIVATE_KEY }}
+          password: ${{ secrets.UCLOUD_PASSWORD }}
+          #key : ${{ secrets.UCLOUD_PRIVATE_KEY }}
           port: ${{ secrets.UCLOUD_PORT }}
           script: |
             whoami
