@@ -33,8 +33,7 @@ jobs:
       - name: Deploy to UCLOUD
         uses: appleboy/ssh-action@master
         with:
-          #host: ${{ secrets.UCLOUD_HOST }}
-          host: 1.1.1.1
+          host: ${{ secrets.UCLOUD_HOST }}
           username: ${{ secrets.UCLOUD_USERNAME }}
           #password: ${{ secrets.UCLOUD_PASSWORD }}
           key : ${{ secrets.UCLOUD_PRIVATE_KEY }}
