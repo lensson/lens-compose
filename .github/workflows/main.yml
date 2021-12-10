@@ -39,5 +39,8 @@ jobs:
           #key : ${{ secrets.UCLOUD_PRIVATE_KEY }}
           port: ${{ secrets.UCLOUD_PORT }}
           script: |
-            whoami
             ls -al
+            echo "===== Try to pull image lensson/lens-nsgateway:latest ====="
+            docker pull lensson/lens-nsgateway:latest
+            echo "===== Try to pull image lensson/lens-auth:latest ====="
+            docker pull lensson/lens-auth:latest
