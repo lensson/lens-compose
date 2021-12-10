@@ -30,12 +30,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.UCLOUD.HOST }}
-        username: ${{ secrets.UCLOUD.USERNAME }}
-        key: ${{ secrets.UCLOUD.KEY }}
-        port: ${{ secrets.UCLOUD.PORT }}
-        script: |
-          whoami
-          ls -al
+      - name: Deploy to UCLOUD
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.UCLOUD.HOST }}
+          username: ${{ secrets.UCLOUD.USERNAME }}
+          key: ${{ secrets.UCLOUD.KEY }}
+          port: ${{ secrets.UCLOUD.PORT }}
+          script: |
+            whoami
+            ls -al
