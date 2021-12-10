@@ -33,10 +33,10 @@ jobs:
       - name: Deploy to UCLOUD
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.UCLOUD.HOST }}
-          username: ${{ secrets.UCLOUD.USERNAME }}
-          key: ${{ secrets.UCLOUD.KEY }}
-          port: ${{ secrets.UCLOUD.PORT }}
+          host: ${{ secrets.UCLOUD_HOST }}
+          username: ${{ secrets.UCLOUD_USERNAME }}
+          key: ${{ secrets.UCLOUD_KEY }}
+          port: ${{ secrets.UCLOUD_PORT }}
           script: |
             whoami
             ls -al
