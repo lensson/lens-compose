@@ -47,13 +47,73 @@ jobs:
             else
               echo "lensson/lens-nsgateway is already up to date..."
             fi
+
             echo "===== Try to pull image lensson/lens-auth:latest ====="
-            docker pull lensson/lens-auth:latest
+            out=$(docker pull lensson/lens-auth:latest)
+            if [[ $out != *"up to date"* ]]; then
+              echo "lensson/lens-auth is updated to newest!"
+            else
+              echo "lensson/lens-auth is already up to date..."
+            fi
+
             echo "===== Try to pull image lensson/lens-blog-admin-backend:latest ====="
-            docker pull lensson/lens-blog-admin-backend:latest
+            out=$(docker pull lensson/lens-blog-admin-backend:latest)
+            if [[ $out != *"up to date"* ]]; then
+              echo "lensson/lens-blog-admin-backend is updated to newest!"
+            else
+              echo "lensson/lens-blog-admin-backend is already up to date..."
+            fi
+
             echo "===== Try to pull image lensson/lens-blog-backend:latest ====="
-            docker pull lensson/lens-blog-backend:latest
+            out=$(docker pull lensson/lens-blog-backend:latest)
+            if [[ $out != *"up to date"* ]]; then
+              echo "lensson/lens-blog-backend is updated to newest!"
+            else
+              echo "lensson/lens-blog-backend is already up to date..."
+            fi
+
+
+
+            echo "===== Try to pull image lensson/lens-blog-monitor:latest ====="
+            out=$(docker pull lensson/lens-blog-monitor:latest)
+            if [[ $out != *"up to date"* ]]; then
+              echo "lensson/lens-blog-monitor is updated to newest!"
+            else
+              echo "lensson/lens-blog-monitor is already up to date..."
+            fi
+            echo "===== Try to pull image lensson/lens-blog-search:latest ====="
+            out=$(docker pull lensson/lens-blog-search:latest)
+            if [[ $out != *"up to date"* ]]; then
+              echo "lensson/lens-blog-search is updated to newest!"
+            else
+              echo "lensson/lens-blog-search is already up to date..."
+            fi
+            echo "===== Try to pull image lensson/lens-blog-picture:latest ====="
+            out=$(docker pull lensson/lens-blog-picture:latest)
+            if [[ $out != *"up to date"* ]]; then
+              echo "lensson/lens-blog-picture is updated to newest!"
+            else
+              echo "lensson/lens-blog-picture is already up to date..."
+            fi
+
+
+
+
             echo "===== Try to pull image lensson/lens-gzh-backend:latest ====="
-            docker pull lensson/lens-gzh-backend:latest
+            out=$(docker pull lensson/lens-gzh-backend:latest)
+            if [[ $out != *"up to date"* ]]; then
+              echo "lensson/lens-gzh-backend is updated to newest!"
+            else
+              echo "lensson/lens-gzh-backend is already up to date..."
+            fi
+
             echo "===== Try to pull image lensson/lens-gzh-frontend:latest ====="
-            docker pull lensson/lens-gzh-frontend:latest
+            out=$(docker pull lensson/lens-gzh-frontend:latest)
+            if [[ $out != *"up to date"* ]]; then
+              echo "lensson/lens-gzh-frontend is updated to newest!"
+            else
+              echo "lensson/lens-gzh-frontend is already up to date..."
+            fi
+
+
+
