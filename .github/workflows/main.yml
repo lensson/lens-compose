@@ -128,5 +128,15 @@ jobs:
             fi
              echo "========== Stop pull lens-gzh images =========="
 
+            echo "****************************************************************************"
+
+            cd myprojects
+            if [ -d "lens-compose" ]; then
+              echo "lens-compose project has been exist on server, try to pull latest"
+              cd lens-compose
+              git pull
+            else
+              echo "lens-compose project is not exist on server, try to clone master latest"
+              git clone lensson/lens-compose:latest
 
 
