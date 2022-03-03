@@ -40,6 +40,7 @@ jobs:
           port: ${{ secrets.UCLOUD_PORT }}
           script: |
             ls -al
+            echo "Start pull lens-solution infratructure images"
             echo "===== Try to pull image lensson/lens-nsgateway:latest ====="
             out=$(docker pull lensson/lens-nsgateway:latest)
             if [[ $out != *"up to date"* ]]; then
@@ -55,7 +56,8 @@ jobs:
             else
               echo "lensson/lens-auth is already up to date..."
             fi
-
+            echo "Finish pull lens-solution infratructure images"
+            echo "Start pull lens-blog images"
             echo "===== Try to pull image lensson/lens-blog-admin-backend:latest ====="
             out=$(docker pull lensson/lens-blog-admin-backend:latest)
             if [[ $out != *"up to date"* ]]; then
@@ -72,8 +74,6 @@ jobs:
               echo "lensson/lens-blog-backend is already up to date..."
             fi
 
-
-
             echo "===== Try to pull image lensson/lens-blog-monitor:latest ====="
             out=$(docker pull lensson/lens-blog-monitor:latest)
             if [[ $out != *"up to date"* ]]; then
@@ -81,6 +81,7 @@ jobs:
             else
               echo "lensson/lens-blog-monitor is already up to date..."
             fi
+
             echo "===== Try to pull image lensson/lens-blog-search:latest ====="
             out=$(docker pull lensson/lens-blog-search:latest)
             if [[ $out != *"up to date"* ]]; then
@@ -88,6 +89,7 @@ jobs:
             else
               echo "lensson/lens-blog-search is already up to date..."
             fi
+
             echo "===== Try to pull image lensson/lens-blog-picture:latest ====="
             out=$(docker pull lensson/lens-blog-picture:latest)
             if [[ $out != *"up to date"* ]]; then
@@ -96,6 +98,13 @@ jobs:
               echo "lensson/lens-blog-picture is already up to date..."
             fi
 
+            echo "===== Try to pull image lensson/lens-blog-sms:latest ====="
+            out=$(docker pull lensson/lens-blog-sms:latest)
+            if [[ $out != *"up to date"* ]]; then
+              echo "lensson/lens-blog-sms is updated to newest!"
+            else
+              echo "lensson/lens-blog-sms is already up to date..."
+            fi
 
 
 
