@@ -40,7 +40,7 @@ jobs:
           port: ${{ secrets.UCLOUD_PORT }}
           script: |
             ls -al
-            echo "Start pull lens-solution infratructure images"
+            echo "========== Start pull lens-solution infratructure images =========="
             echo "===== Try to pull image lensson/lens-nsgateway:latest ====="
             out=$(docker pull lensson/lens-nsgateway:latest)
             if [[ $out != *"up to date"* ]]; then
@@ -56,7 +56,9 @@ jobs:
             else
               echo "lensson/lens-auth is already up to date..."
             fi
-            echo "Finish pull lens-solution infratructure images"
+            echo "========== Finish pull lens-solution infratructure images =========="
+
+            echo "========== Start pull lens-blog images =========="
             echo "Start pull lens-blog images"
             echo "===== Try to pull image lensson/lens-blog-admin-backend:latest ====="
             out=$(docker pull lensson/lens-blog-admin-backend:latest)
@@ -105,9 +107,10 @@ jobs:
             else
               echo "lensson/lens-blog-sms is already up to date..."
             fi
+            echo "========== Finish pull lens-blog images =========="
 
 
-
+            echo "========== Start pull lens-gzh images =========="
             echo "===== Try to pull image lensson/lens-gzh-backend:latest ====="
             out=$(docker pull lensson/lens-gzh-backend:latest)
             if [[ $out != *"up to date"* ]]; then
@@ -123,6 +126,7 @@ jobs:
             else
               echo "lensson/lens-gzh-frontend is already up to date..."
             fi
+             echo "========== Stop pull lens-gzh images =========="
 
 
 
