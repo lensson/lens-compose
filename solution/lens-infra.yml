@@ -25,7 +25,7 @@ services:
         ipv4_address:  172.28.0.50
     environment:
       nacos: lens-nacos
-      redis: lens-redis
+      lens-redis: lens-redis
       lens-auth: lens-auth
 networks:
   solution_backnet:
