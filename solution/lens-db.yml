@@ -15,7 +15,7 @@ services:
       solution_backnet:
         ipv4_address: 172.28.0.11
   lens-mariadb-adminer:
-    image: adminer
+    image: adminer:latest
     container_name: lens-mariadb-adminer
     restart: unless-stopped
     depends_on:
