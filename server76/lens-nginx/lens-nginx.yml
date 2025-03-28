@@ -12,7 +12,7 @@ services:
       - ~/containers/lens-nginx/logs:/var/log/nginx
       - ./cert:/etc/nginx/cert
     environment:
-      DOMAIN_NAME: malakj.com
+      DOMAIN_NAME: chentown.cn
     ports:
       - 80:80
       - 443:443
