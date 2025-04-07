@@ -11,7 +11,7 @@ mysql -u "$user" -p"$pass" -h 172.28.0.11 <<EOF
   -- nacos
   -- source 02_nacos/021_user_nacos.sql
   -- source 02_nacos/022_db_nacos.sql
-  --source 02_nacos/023_table_nacos.sql
+  -- source 02_nacos/023_table_nacos.sql
   -- infra
   -- source 03_lensinfra/031_db_zipkin.sql
   -- source 03_lensinfra/032_table_zipkin.sql
@@ -22,5 +22,6 @@ mysql -u "$user" -p"$pass" -h 172.28.0.11 <<EOF
   -- source 05_plumemo/051_db_plumemo.sql
   -- lensblog
   -- source 06_lensblog/061_nacos_lensblog.sql
-
+   source 06_lensblog/062_db_lensblog.sql
+   source 06_lensblog/063_lensblog.sql
 EOF

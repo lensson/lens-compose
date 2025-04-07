@@ -6,11 +6,11 @@ services:
     container_name: lens-nacos
     restart: unless-stopped
     env_file:
-      - lens-nacos.env
+      - conf/lens-nacos.env
     volumes:
-      - ./nacos-logback.xml:/home/nacos/conf/nacos-logback.xml
+      - ./conf/nacos-logback.xml:/home/nacos/conf/nacos-logback.xml
       - ./init.d/custom.properties:/home/nacos/init.d/custom.properties
-      - ~/containers/logs/lens-nacos:/home/nacos/logs
+      - ~/containers/lens-nacos/logs:/home/nacos/logs
     ports:
       - "8848:8848"
       - "9555:9555"
