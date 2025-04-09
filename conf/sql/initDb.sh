@@ -22,6 +22,8 @@ mysql -u "$user" -p"$pass" -h 172.28.0.11 <<EOF
   -- source 05_plumemo/051_db_plumemo.sql
   -- lensblog
   -- source 06_lensblog/061_nacos_lensblog.sql
-   source 06_lensblog/062_db_lensblog.sql
-   source 06_lensblog/063_lensblog.sql
+  -- source 06_lensblog/062_db_lensblog.sql
+  -- source 06_lensblog/063_lensblog.sql
+  source 06_lensblog/064_db_blog_picture.sql
+  source 06_lensblog/065_blog_picture.sql
 EOF

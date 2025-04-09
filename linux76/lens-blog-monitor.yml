@@ -8,7 +8,7 @@ services:
     env_file:
       - env/solution.env
     volumes:
-      - ~/containers/logs/lens-blog-monitor:/root/containers/logs/lens-blog-monitor
+      - ~/containers/lens-blog-monitor/logs:/root/containers/logs/lens-blog-monitor
     ports:
       - 9020:9020
     networks:

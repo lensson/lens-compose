@@ -1,0 +1,32 @@
+version: '3.5'
+
+services:
+  lens-gateway:
+    container_name: lens-gateway
+    image: lensson/lens-gateway:latest
+    restart: unless-stopped
+    ports:
+      - 8849:8849
+    networks:
+      solution_backnet:
+        ipv4_address:  172.28.0.49
+    volumes:
+      - ~/containers/lens-gateway/nacos/naming/public:/root/nacos/naming/public
+    environment:
+      nacos: lens-nacos
+  lens-auth:
+    container_name: lens-auth
+    image: lensson/lens-auth:latest
+    restart: unless-stopped
+    ports:
+      - 8850:8850
+    networks:
+      solution_backnet:
+        ipv4_address:  172.28.0.50
+    environment:
+      nacos: lens-nacos
+      redis: lens-redis
+      lens-auth: lens-auth
+networks:
+  solution_backnet:
+    external: true 

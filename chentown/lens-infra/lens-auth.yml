@@ -1,0 +1,20 @@
+version: '3.5'
+
+services:
+  lens-auth:
+    container_name: lens-auth
+    image: lensson/lens-auth:latest
+    restart: unless-stopped
+    ports:
+      - 8850:8850
+    networks:
+      solution_backnet:
+        ipv4_address:  172.28.0.50
+    environment:
+      nacos: lens-nacos
+      redis: lens-redis
+      lens-redis: lens-redis
+      lens-auth: lens-auth
+networks:
+  solution_backnet:
+    external: true 
