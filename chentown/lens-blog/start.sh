@@ -1,1 +1,1 @@
-docker-compose -f lens-blog-monitor.yml up&
+docker-compose -f lens-blog.yml up&

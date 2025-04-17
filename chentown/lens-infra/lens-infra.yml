@@ -1,6 +1,17 @@
 version: '3.5'
 
 services:
+#  lens-nsgateway:
+#    container_name: lens-nsgateway
+#    image: lensson/lens-nsgateway:latest
+#    restart: unless-stopped
+#    ports:
+#      - 8851:8851
+#    networks:
+#      solution_backnet:
+#        ipv4_address: 172.28.0.51
+#    environment:
+#      nacos: lens-nacos
   lens-gateway:
     container_name: lens-gateway
     image: lensson/lens-gateway:latest
@@ -26,6 +37,7 @@ services:
     environment:
       nacos: lens-nacos
       redis: lens-redis
+      lens-redis: lens-redis
       lens-auth: lens-auth
 networks:
   solution_backnet:
