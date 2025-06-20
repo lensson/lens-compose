@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  lens-gateway:
+    container_name: lens-sso-gateway
+    image: lensson/lens-sso-gateway:latest
+    restart: unless-stopped
+    ports:
+      - 8830:8830
+    networks:
+      solution_backnet:
+        ipv4_address:  172.28.0.30
+    environment:
+      nacos: lens-nacos
+      redis: lens-redis
+networks:
+  solution_backnet:
+    external: true
